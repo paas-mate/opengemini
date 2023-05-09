@@ -17,4 +17,11 @@ COPY --from=compiler /opt/openGemini/build/ts-server /opt/opengemini/ts-server
 COPY --from=compiler /opt/openGemini/build/ts-sql /opt/opengemini/ts-sql
 COPY --from=compiler /opt/openGemini/build/ts-store /opt/opengemini/ts-store
 
+RUN ln -s /opt/opengemini/ts-cli /usr/bin/ts-cli && \
+    ln -s /opt/opengemini/ts-meta /usr/bin/ts-meta && \
+    ln -s /opt/opengemini/ts-monitor /usr/bin/ts-monitor && \
+    ln -s /opt/opengemini/ts-server /usr/bin/ts-server && \
+    ln -s /opt/opengemini/ts-sql /usr/bin/ts-sql && \
+    ln -s /opt/opengemini/ts-store /usr/bin/ts-store
+
 WORKDIR /opt/opengemini
